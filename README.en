@@ -1,7 +1,8 @@
 sipConfTool
 ===========
 
-Configuration tool for sip.conf on asterisk
+Configuration tool for sip.conf on asterisk.
+The goal of this project is setup users from ldap(Lightweight Directory Access Protocol) on file that could be imported by asterisk.
 
 
 Requeriments

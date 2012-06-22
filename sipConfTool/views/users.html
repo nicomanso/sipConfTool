@@ -1,9 +1,9 @@
 {% if user_list %}
     <ul>
-    {% for user in user_list %}
-        <li>{{user}}</li>
+    {% for poll in user_list %}
+        <li>{{ poll }}</li>
     {% endfor %}
     </ul>
 {% else %}
-    <p>No users are available.</p>
+    <p>No polls are available.</p>
 {% endif %}
