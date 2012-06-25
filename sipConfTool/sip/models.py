@@ -20,5 +20,3 @@ class SipUser(models.Model):
     qualify = models.CharField(max_length=200)
     pickupgroup = models.CharField(max_length=200)
     callgroup = models.CharField(max_length=200)
-
-
