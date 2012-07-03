@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.template import Context, loader
 import syncLdap
-from sip.models import Users
+from sip.models import Users,SipUser
 
 def sync(request):
     ###This list of attributes must match whit the next mark list
@@ -23,3 +23,4 @@ def show(request):
         'user_list' : usernames,
         })
     return HttpResponse(t.render(c))
+
