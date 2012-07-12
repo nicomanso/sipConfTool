@@ -4,11 +4,9 @@ import syncLdap
 from sip.models import Users,SipUser
 
 def sync(request):
-    ###This list of attributes must match whit the next mark list
     user_list = syncLdap.getUserList(['uid','cn'])
     for each in user_list:
         if (len(Users.objects.filter(username=each['uid'][0])) == 0):
-            #### *** Mark of list
             newUser = Users(username = each['uid'][0], name = each['cn'][0])
             newUser.save()
     return HttpResponse(each['uid'][0])
