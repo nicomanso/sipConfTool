@@ -12,13 +12,13 @@ class Users(models.Model):
         return self.name
 
 class SipUser(models.Model):
-    callerid = models.ForeignKey(Users, unique=True)
+    callerid = models.OneToOneField(Users)
     context = models.CharField(max_length=200)
     secret = models.CharField(max_length=200)
-    username = models.IntegerField()
+    username = models.IntegerField(primary_key=True)
     host = models.CharField(max_length=200)
-    canreinvite = models.BooleanField(max_length=200)
-    qualify = models.BooleanField()
+    canreinvite = models.CharField(max_length=4)
+    qualify = models.CharField(max_length=4)
     pickupgroup = models.IntegerField(max_length=200)
     callgroup = models.IntegerField(max_length=200)
     

@@ -12,10 +12,17 @@ class SipForm(forms.ModelForm):
     username = forms.IntegerField(initial=999)
     context = forms.CharField(initial='usuario_4')
     host = forms.CharField(initial='dynamic')
-    canreinvite = forms.BooleanField(initial=False)
-    qualify = forms.BooleanField(initial=True)
+    canreinvite = forms.BooleanField(initial=False, required=False)
+    qualify = forms.BooleanField(initial=True,  required=False)
     pickupgroup = forms.IntegerField(initial=1)
     callgroup = forms.IntegerField(initial=1)
+
+    def yesNo(self,  choice):
+        if choice == 1:
+            return "yes"
+        else:
+            return "no"
+
 
     def clean_callerid(self):
         from django.core.exceptions import ValidationError
@@ -26,16 +33,21 @@ class SipForm(forms.ModelForm):
         except User.DoesNotExist:
             raise forms.ValidationError("No existe el usuario")
 
+    def clean_canreinvite(self):
+        choiceCanReinvite = self.cleaned_data['canreinvite']
+        return self.yesNo(choiceCanReinvite)
 
+    def clean_qualify(self):
+        choiceQualify = self.cleaned_data['qualify']
+        return self.yesNo(choiceQualify)
+        
 
     class Meta:
         model = SipUser
 
 
-        
-
-
 class SipAdmin(admin.ModelAdmin):
     form = SipForm
+    js = ()
 
 admin.site.register(SipUser, SipAdmin)

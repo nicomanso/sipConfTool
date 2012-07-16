@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-4.6.dtd">
 <!-- eric4 project file for project sipConfTool -->
-<!-- Saved: 2012-07-12, 16:48:05 -->
+<!-- Saved: 2012-07-13, 15:18:07 -->
 <!-- Copyright (C) 2012 ,  -->
 <Project version="4.6">
   <Language>en</Language>
@@ -17,6 +17,12 @@
     <Source>__init__.py</Source>
     <Source>manage.py</Source>
     <Source>urls.py</Source>
+    <Source>sip/views.py</Source>
+    <Source>sip/__init__.py</Source>
+    <Source>sip/admin.py</Source>
+    <Source>sip/syncLdap.py</Source>
+    <Source>sip/tests.py</Source>
+    <Source>sip/models.py</Source>
   </Sources>
   <Forms>
   </Forms>
@@ -34,12 +40,12 @@
   <FiletypeAssociations>
     <FiletypeAssociation pattern="*.html" type="FORMS" />
     <FiletypeAssociation pattern="*.idl" type="INTERFACES" />
-    <FiletypeAssociation pattern="*.mo" type="TRANSLATIONS" />
+    <FiletypeAssociation pattern="*.htm" type="FORMS" />
     <FiletypeAssociation pattern="*.po" type="TRANSLATIONS" />
     <FiletypeAssociation pattern="*.ptl" type="SOURCES" />
-    <FiletypeAssociation pattern="*.js" type="FORMS" />
     <FiletypeAssociation pattern="*.pyw" type="SOURCES" />
-    <FiletypeAssociation pattern="*.htm" type="FORMS" />
+    <FiletypeAssociation pattern="*.js" type="FORMS" />
+    <FiletypeAssociation pattern="*.mo" type="TRANSLATIONS" />
     <FiletypeAssociation pattern="*.py" type="SOURCES" />
   </FiletypeAssociations>
 </Project>
