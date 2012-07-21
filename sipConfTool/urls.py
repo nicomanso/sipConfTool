@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     # Example:
     # (r'^sipConfTool/', include('sipConfTool.foo.urls')),
     (r'^admin/sync', 'sip.views.sync'),
+    (r'^admin/write', 'sip.views.writeSipConf'),
     (r'^admin/show', 'sip.views.show'),
 
     # Uncomment the admin/doc line below to enable admin documentation:

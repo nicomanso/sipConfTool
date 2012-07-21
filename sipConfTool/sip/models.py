@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 
 class Users(models.Model):
     username = models.CharField(max_length=200, primary_key=True)
@@ -11,12 +12,16 @@ class Users(models.Model):
         return self.name
 
 class SipUser(models.Model):
-    username = models.ForeignKey(Users)
+    callerid = models.OneToOneField(Users)
     context = models.CharField(max_length=200)
     secret = models.CharField(max_length=200)
-    callerid = models.CharField(max_length=200)
+    username = models.IntegerField(primary_key=True)
     host = models.CharField(max_length=200)
-    canreinvite = models.CharField(max_length=200)
-    qualify = models.CharField(max_length=200)
-    pickupgroup = models.CharField(max_length=200)
-    callgroup = models.CharField(max_length=200)
+    canreinvite = models.CharField(max_length=4)
+    qualify = models.CharField(max_length=4)
+    pickupgroup = models.IntegerField(max_length=200)
+    callgroup = models.IntegerField(max_length=200)
+    
+    def __unicode__(self):
+        return self.callerid.name
+
